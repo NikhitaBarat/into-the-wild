@@ -4,8 +4,8 @@ const FaunaModel = require('../models/flaura.model');
 // @route GET
 const getPlants = async (req, res) => {
     try {
-
-
+        const data = await FaunaModel.find({})
+        res.status(200).send(data)
     }catch(error){
         res.send(error);
     }
@@ -13,8 +13,10 @@ const getPlants = async (req, res) => {
 // @desc create plant data
 // @route POST
 const createPlant = async (req, res) => {
+    const data = req.body
     try{
-
+        const resp = await FaunaModel.create(data)
+        res.status(201).send(resp)
     }catch(error){
         res.send(error);
     }
@@ -22,9 +24,12 @@ const createPlant = async (req, res) => {
 
 // @desc fetch single plant data
 // @route GET
-const getSinglePlant = async (req, res) => {
-    try{
 
+const getSinglePlant = async (req, res) => {
+    const id = req.params.id;
+    try{
+        const data = await FaunaModel.findById(id)
+        res.status(200).send(data)
     }catch(error){
         res.send(error);
     }
@@ -33,8 +38,11 @@ const getSinglePlant = async (req, res) => {
 // @desc delete plant data
 // @route DELETE
 const deletePlant = async (req, res) => {
-    try{
+    const id = req.params.id;
 
+    try{
+        const data = await FaunaModel.findByIdAndDelete(id)
+        res.send(data)    
     }catch(error){
         res.send(error);
     }
@@ -44,9 +52,19 @@ const deletePlant = async (req, res) => {
 // @route PUT
 
 const updatePlant = async (req, res) => {
+    const data = req.body
     try{
-
+        const resp = await FaunaModel.findByIdAndUpdate(data)
+        res.send(resp)
     }catch(error){
         res.send(error);
     }
+}
+
+module.exports = {
+    getPlants,
+    getSinglePlant,
+    createPlant,
+    deletePlant,
+    updatePlant
 }
