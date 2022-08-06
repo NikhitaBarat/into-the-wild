@@ -1,5 +1,6 @@
 import React from 'react';
-import { MOUNTAIN } from '../../assets';
+import { MOUNTAIN, TRAVELLER } from '../../assets';
+import { FeatureCard } from '../../components';
 import './home.styles.css';
 
 const Home = () => {
@@ -11,6 +12,24 @@ const Home = () => {
           <img className='mountain' src={MOUNTAIN} alt="" />
         </div>
 
+        <div className="feature-section">
+          <FeatureCard/>
+          <FeatureCard/>
+          <div className="learn-more-ft-sec">
+            <h1>H</h1>
+          </div>
+        </div>
+        <div className="linear-bg"></div>
+        <img className='traveller-img' src={TRAVELLER} alt="" />
+
+        <div className="feature-section">
+          <div className="learn-more-ft-sec">
+            <h1>H</h1>
+          </div>
+          <FeatureCard/>
+          <FeatureCard/>
+        </div>
+        
     </div>
   )
 }
