@@ -2,6 +2,8 @@ const express = require('express')
 const dotenv = require('dotenv')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const path = require('path')
+
 // app configuration
 const app = express()
 dotenv.config()
@@ -13,8 +15,9 @@ app.use(cors())
 
 
 // routes
+app.use(express.static(path.join(__dirname, './client/build')))
 app.get('/', (req, res) =>{
-    res.status(200).send('Server is running')
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'))
 })
 
 // database connection
@@ -28,7 +31,7 @@ const database_connection = () => {
     })
 }
 
-// database_connection()
+database_connection()
 
 
 // server running at port 4000
