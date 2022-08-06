@@ -1,0 +1,26 @@
+header {
+    text-align: center;
+    padding: 1rem 4rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+}
+
+.header-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-option {
+    font-weight: 200;
+    display: flex;
+    list-style: none;
+}
+
+.header-option li {
+    margin: 0 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
