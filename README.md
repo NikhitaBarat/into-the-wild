@@ -2,6 +2,13 @@
 
 ![](./assets/preview.png)
 
+
+# Tech Stack
+
+- React *Typescript*
+- MongoDB and DynamoDB
+- NodeJs 
+- ExpressJs
 ## Inspiration
 
 ## What it does
