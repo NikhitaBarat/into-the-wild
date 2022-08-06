@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Dashboard, Home, PlantProfile, Tribeprofile } from "./pages";
+import { Dashboard, Home, PlantDash, PlantProfile, Tribeprofile } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components";
 function App() {
@@ -9,8 +9,11 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="plantprofile" element={<PlantProfile />} />
+        <Route path="discover" element={<Dashboard />} />
+        <Route path="plant">
+          <Route index element={<PlantDash />} />
+          <Route path=":plantId" element={<PlantProfile />} />
+        </Route>
         <Route path="tribeprofile" element={<Tribeprofile />} />
       </Routes>
     </div>
