@@ -1,0 +1,1 @@
+export { default as MOUNTAIN } from './mnt.png';

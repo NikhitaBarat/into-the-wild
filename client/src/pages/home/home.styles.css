@@ -1,0 +1,20 @@
+.hero-container h1{
+    font-size: 10rem;
+    text-align: center;
+    margin-top: -40rem;
+    position: relative;
+}
+
+.home-sky {
+    position: relative;
+    z-index: -1;
+    margin-top: -6rem;
+    height: 60rem;
+    background:  linear-gradient(180deg, rgba(0, 26, 255, 0.39) 0%, rgba(0, 178, 255, 0) 100%), #B9B5B5;;
+}
+
+.mountain {
+    position: relative;
+    margin-top: -15rem;
+    width: 100%;
+}
