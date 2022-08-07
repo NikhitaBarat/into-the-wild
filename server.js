@@ -18,7 +18,19 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, "./client/build")))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './client/build', 'index.html'))
-  })
+})
+
+app.get('/discover', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'))
+})
+
+app.get('/team', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'))
+})
+
+app.get('/join', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'))
+})
 
 // database connection
 const database_connection = () => {
