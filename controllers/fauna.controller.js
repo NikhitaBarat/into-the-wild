@@ -1,7 +1,9 @@
 const FaunaModel = require('../models/flaura.model'); 
 
+// base route /api/plants/
+
 // @desc fetch all the plant at that location
-// @route GET
+// @route GET /
 const getPlants = async (req, res) => {
     try {
         const data = await FaunaModel.find({})
@@ -11,7 +13,7 @@ const getPlants = async (req, res) => {
     }
 }
 // @desc create plant data
-// @route POST
+// @route POST /create
 const createPlant = async (req, res) => {
     const data = req.body
     try{
@@ -23,7 +25,7 @@ const createPlant = async (req, res) => {
 }
 
 // @desc fetch single plant data
-// @route GET
+// @route GET /one/:id
 
 const getSinglePlant = async (req, res) => {
     const id = req.params.id;
@@ -36,7 +38,7 @@ const getSinglePlant = async (req, res) => {
 }
 
 // @desc delete plant data
-// @route DELETE
+// @route DELETE /:id
 const deletePlant = async (req, res) => {
     const id = req.params.id;
 
@@ -49,7 +51,7 @@ const deletePlant = async (req, res) => {
 }
 
 // @desc update plant details
-// @route PUT
+// @route PUT /:id
 
 const updatePlant = async (req, res) => {
     const data = req.body

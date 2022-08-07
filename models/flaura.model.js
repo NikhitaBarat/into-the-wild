@@ -9,9 +9,12 @@ const PlantSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please enter description']
     },
-    
-    
-
+    imageurl: String,
+    location: {
+        type: String,
+        required: [true, 'Please enter origin']
+    },
+    country: String
 }, 
 {
     timestamps: true 
