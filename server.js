@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const path = require('path')
+const faunaRoute = require('./routes/fauna.routes');
 
 // app configuration
 const app = express()
@@ -31,6 +32,16 @@ app.get('/team', (req, res) => {
 app.get('/join', (req, res) => {
     res.sendFile(path.join(__dirname, './client/build', 'index.html'))
 })
+
+app.get('/plant/:plantid', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'))
+})
+
+app.get('/plant/:tribeid', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'))
+})
+
+app.use('/api/plants/', faunaRoute)
 
 // database connection
 const database_connection = () => {
